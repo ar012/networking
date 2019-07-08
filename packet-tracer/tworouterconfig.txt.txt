@@ -1,0 +1,44 @@
+1. Let's assume that the network names are 
+	i. Network-1
+	ii. Network-2
+2. On network-1
+	i. assign ip address to all the pcs [e.g. 192.168.1.0]
+	ii. assign the gateway. [ the router ip address is your default gateway e.g. 192.168.1.254]
+3. On router-1 [Network-1]
+	i. enable
+	ii. cofigure terminal
+	iii. interface fastethernet 0/0 [assuming that you have connected your switch to the 0/0 port of the router]
+	iv. ip address 192.168.1.254 255.255.255.0
+	v. no shutdown
+	vi. exit
+	vii. exit
+	viii. copy run start
+4. On network-2
+	i. assign ip address to all the pcs [e.g. 200.200.200.0]
+	ii. assign the gateway. [ the router ip address is your default gateway e.g. 200.200.200.254]
+5. On router-2 [Network-2]
+	i. enable
+	ii. cofigure terminal
+	iii. interface fastethernet 0/0 [assuming that you have connected your switch to the 0/0 port of the router]
+	iv. ip address 200.200.200.254 255.255.255.0
+	v. no shutdown
+	vi. exit
+	vii. exit
+	viii. copy run start
+
+6. Go to router-1 [ be sure of the fastethernet port number which is connected to the other router]
+	i. configure terminal
+	ii. interface fastethernet 1/0
+	iii. ip address 172.16.0.1 255.255.0.0
+	iv. no shutdown
+	v. exit
+	vi. exit
+	vii. copy run start
+7. Go to router-2 [ be sure of the fastethernet port number which is connected to the other router]
+	i. configure terminal
+	ii. interface fastethernet 1/0
+	iii. ip address 172.16.0.2 255.255.0.0
+	iv. no shutdown
+	v. exit
+	vi. exit
+	vii. copy run start

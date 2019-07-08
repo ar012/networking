@@ -1,0 +1,165 @@
+		CISCO ROUTER CONFIGURATION
+		===========================
+telnet configuration:
+---------------------
+USA(config)#line vty 0 4
+USA(config-line)# password 123
+USA(config-line)#login 
+
+telnet configuration (user base)
+--------------------------------
+USA(config)#line vty 0 4
+USA(config-line)#login local
+
+USA(config)#username usa privilege 15 password 123
+
+
+telnet login from client pc
+============================
+pc> telnet 192.168.1.1  ( ip address )
+
+
+ssh confguration
+-----------------
+BD(config)#ip domain-name bionic.com 	(here name bionic.com is user define)
+BD(config)#crypto key generate rsa 
+   How many bits in the modulus [512]: 1024  (here value 1024 is user define)
+
+
+BD(config)#line vty 0 4  ( login limit 5 user at a time )
+BD(config-line)#transport input all  ( or transport input ssh  or transport input telnet)
+BD(config-line)#login local
+
+
+ssh connect from client pc         
+---------------------------
+PC> ssh -l username ipaddress 
+
+pc> ssh -l ahsan 192.168.1.1
+		
+		
+switch ssh/ telnet configuration
+---------------------------------
+
+USA-SW-1(config)#interface vlan 1
+USA-SW-1(config-if)#ip address 192.168.2.10 255.255.255.0
+
+USA-SW-1(config)#ip domain-name bionic.com
+USA-SW-1(config)#crypto key generate rsa 
+How many bits in the modulus [512]: 1024
+
+USA-SW-1(config)#line vty 0 4
+USA-SW-1(config-line)#transport input ssh 
+USA-SW-1(config-line)#login local 
+
+USA-SW-1(config)#do wr
+USA-SW-1(config)#username sw1 privilege 15 password 123
+
+set time
+=========
+check current time status
+
+USA#sh clock
+ NOTE: TIME MUST SET IN ENABLE MODE
+======================================
+
+USA#clock set ?
+  hh:mm:ss  Current Time
+USA#clock set 12:38:30 ?
+  <1-31>  Day of the month
+  MONTH   Month of the year
+USA#clock set 12:38:30 3 ?
+  MONTH  Month of the year
+USA#clock set 12:38:30 3 ma
+USA#clock set 12:38:30 3 march ?
+  <1993-2035>  Year
+USA#clock set 12:38:30 3 march 2017
+
+
+USA#wr
+Building configuration...
+[OK]
+ 
+time zone set
+==============
+USA(config)#clock timezone Dhaka 6 0
+
+check clock
+-----------
+USA#sh clock
+ 
+*12:43:34.163 UTC Fri Mar 3 2017
+
+
+
+DHCP server configuration
+=========================
+USA(config)#ip dhcp pool usadhcp 
+USA(dhcp-config)#?
+  default-router  Default routers
+  dns-server      Set name server
+  exit            Exit from DHCP pool configuration mode
+  network         Network number and mask
+  no              Negate a command or set its defaults
+  option          Raw DHCP options
+USA(dhcp-config)#
+USA(dhcp-config)#
+USA(dhcp-config)#net
+USA(dhcp-config)#network ?
+  A.B.C.D  Network number in dotted-decimal notation
+USA(dhcp-config)#network 192.168.2.0 ?
+  A.B.C.D  Network mask
+USA(dhcp-config)#network 192.168.2.0 255.255.255.0 ?
+  <cr>
+USA(dhcp-config)#network 192.168.2.0 255.255.255.0 
+USA(dhcp-config)#?
+  default-router  Default routers
+  dns-server      Set name server
+  exit            Exit from DHCP pool configuration mode
+  network         Network number and mask
+  no              Negate a command or set its defaults
+  option          Raw DHCP options
+USA(dhcp-config)#de
+USA(dhcp-config)#default-router ?
+  A.B.C.D  Router's IP address
+USA(dhcp-config)#default-router 192.168.2.1 ?
+  <cr>
+USA(dhcp-config)#default-router 192.168.2.1 
+USA(dhcp-config)#?
+  default-router  Default routers
+  dns-server      Set name server
+  exit            Exit from DHCP pool configuration mode
+  network         Network number and mask
+  no              Negate a command or set its defaults
+  option          Raw DHCP options
+USA(dhcp-config)#dns
+USA(dhcp-config)#dns-server 8.8.8.8
+USA(dhcp-config)#op
+USA(dhcp-config)#option ?
+  <0-254>  DHCP option code
+USA(dhcp-config)#option 10 ?
+  ip  Data is one or more IP addresses
+USA(dhcp-config)#option 10 ip
+USA(dhcp-config)#option 10 ip ?
+  A.B.C.D  Set IP address
+USA(dhcp-config)#option 10 ip 192.168.2.10 ?
+  <cr>
+
+x------------------------------------------
+USA(dhcp-config)#option 20 ipa
+USA(dhcp-config)#option 20 ip
+USA(dhcp-config)#option 20 ip 192.168.2.10 ?
+  <cr>
+USA(dhcp-config)#option 20 ip 192.168.2.10 
+%This version of PT does not support options other than 150
+-------------------------------------------x
+USA(dhcp-config)#do wr
+Building configuration...
+[OK]
+USA(dhcp-config)#
+
+
+
+
+
+

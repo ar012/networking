@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html class="gr__tutorial_mnaser_net" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>M Naser's Tutorial | IPv6 Tutorial in Bangla</title>
+		<script src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/jquery.js"></script>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="description" content="The tutorials in this site describes the networking learnings in bangla">
+		<meta name="keywords" content="linux, ccna, mikrotik, bangla, bengali, tutorial, mnaser, bd, redhat">
+		
+		<link rel="shortcut icon" href="http://tutorial.mnaser.net/images/title-logo.ico">
+		<link href="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/style.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body data-gr-c-s-loaded="true">
+		<!---Start Script of Stick the Main Menu--->
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var s = $("#sticker");
+			var pos = s.position();                   
+			$(window).scroll(function() {
+				var windowpos = $(window).scrollTop();
+				if (windowpos >= pos.top) {
+					s.addClass("stick");
+				} else {
+					s.removeClass("stick");
+				}
+			});
+		});
+		</script>
+		<!---End Script of Stick the Main Menu--->
+	
+		<!---Start of stracture--->
+		<div class="stracture">
+		
+			<!---Start of header_area--->
+			<div class="header_area fix">
+			
+				<div class="logo">
+					<a href="http://tutorial.mnaser.net/"><img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/logo.png" alt=""></a>
+				</div>
+				
+				<div class="small_menu fix">
+					<ul>
+						<li><a href="http://tutorial.mnaser.net/index.php" title=""><img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/home-icon.png" alt=""> Home</a></li>
+						<li><a href="http://tutorial.mnaser.net/feedback.php" title=""> <img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/feedback-icon.png" alt=""> Feedback</a></li>
+					</ul>
+				</div>
+			</div>
+			<!---End of header_area--->
+			
+			<!---Start of slide--->
+			<div class="slide fix">
+				
+				<div class="slider">
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/banner.jpg" alt="">
+				</div>
+					
+				<div class="side-slider">
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/learning.jpg" alt="">
+				</div>
+								
+			</div>
+			<!---End of slide--->
+
+			<!---Start of scroll--->
+			<div class="scroll fix">
+				<marquee behavior="scroll" direction="left" scrollamount="3"><strong>This site is best viewed using the updated version of Mozilla Firefox</strong></marquee>
+			</div>
+			<!---End of scroll--->
+			
+			<!---Start of main_menu_area--->
+			<div class="main_menu_area stick" id="sticker">
+				<div class="main_menu">
+					<ul>
+						<li><a href="http://tutorial.mnaser.net/about.php">About</a></li>
+						<li><a href="#">Network Administration</a>
+							<ul>
+							<li><a href="http://tutorial.mnaser.net/ciscobasic.php">Network Fundamentals</a></li>
+							<li><a href="http://tutorial.mnaser.net/ciscorouting.php">Cisco Routing</a></li>
+							<li><a href="http://tutorial.mnaser.net/ciscoswitch.php">Cisco Switching</a></li>
+							<li><a href="http://tutorial.mnaser.net/ciscosecurity.php">Cisco Security</a></li>
+							<li><a href="http://tutorial.mnaser.net/basicmikrotik.php">MikroTik Basic</a></li>
+							<li><a href="http://tutorial.mnaser.net/advancedmikrotik.php">MikroTik Advanced</a></li>
+							<li><a href="http://tutorial.mnaser.net/jnios.php">Juniper Basic</a></li>
+							<li><a href="http://tutorial.mnaser.net/jnadv.php">Juniper Advanced</a></li>
+							<li><a href="http://tutorial.mnaser.net/ipv6.php">IPv6 Routing</a></li>
+							<li><a href="http://tutorial.mnaser.net/mpls.php">MPLS</a></li>
+							</ul>
+						</li>
+						<li><a href="#">System Administration</a>
+							<ul>
+							<li><a href="http://tutorial.mnaser.net/redhatbasic.php">Red Hat Basic</a></li>
+							<li><a href="http://tutorial.mnaser.net/redhatserveradmin.php">Red Hat Server Administration</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Others</a>
+							<ul>
+							<li><a href="http://tutorial.mnaser.net/networkandinternet.php">Network and Internet</a></li>
+							</ul>
+						</li>
+						<li><a href="http://tutorial.mnaser.net/feedback.php">Feedback</a></li>
+					</ul>
+				</div>
+			</div>
+			<!---End of main_menu_area--->
+
+			<!---Start of main_area--->
+			<div class="main_area fix">
+				
+				<div class="main_text fix">
+					<h1>Introduction to Internet Protocol version 6</h1>
+					<p>Internet Protocol version 6 সংক্ষেপে IPv6 হলো TCP/IP প্রটোকল 
+সুইটের Internet লেয়ারের (OSI মডেলের ক্ষেত্রে Network লেয়ার) একটি প্রটোকল
+ যা ইন্টারনেটে যুক্ত প্রতিটি নেটওয়ার্ক ডিভাইসকে একটি স্বতন্ত্র পরিচয় 
+প্রদান করে। বর্তমানে বহুল ব্যবহৃত IPv4 এর সীমাবদ্ধতা দূর করার লক্ষ্যে 
+Internet Engineering Task Force (IETF) এই IPv6 ডেভেলপ করার কাজ শুরু করে।
+ বিশ্বের বিভিন্ন দেশে ইতিমধ্যে IPv6 এর প্রয়োগ শুরু হয়েছে যা ক্রমেই 
+বৃদ্ধি পাচ্ছে।</p>
+					<h2>IPv6……… কেন?</h2>
+					<p>IPv4 হলো একটি 32 বিটের এ্যাড্রেস স্পেস যার মাধ্যমে 4.3 বিলিয়ন 
+এ্যাড্রেস ব্যবহার করা সম্ভব। ক্রমবর্ধমান ইন্টারনেটের এই যুগে প্রতিদিন 
+অসংথ্য নেটওয়ার্ক ডিভাইস ইন্টারনেটের সাথে যুক্ত হচ্ছে আর প্রতিটির জন্য 
+একটি করে IPv4 এ্যাড্রেসের প্রয়োজন হচ্ছে। ইন্টারনেটের বিভিন্ন রিসোর্স 
+এনালিষ্ট প্রতিষ্ঠানের ভাষ্যমতে, খুব শীঘ্রই এই IPv4 এর এ্যাড্রেস সংখ্যা 
+শেষ হয়ে যাবে, আর এটা হবে ২০২০ সালের মধ্যেই। Internet Assigned Numbers 
+Authority (IANA) ২০১১ সালের জানুয়ারীতে বিভিন্ন Regional Internet 
+Registries (RIRs) সমূহকে IPv4 এর সর্বশেষ /8 (আট) ব্লক বরাদ্দ দিয়েছে। 
+RIRs এর মাধ্যমে এই এ্যাড্রেস ব্লকসমূহ বিশ্বের বিভিন্ন প্রান্তের আই.এস.পি
+ সমূহ বরাদ্দ পাচ্ছে যার অবশিষ্ট আই.পি সংখ্যা ক্রমান্বয়ে হ্রাস পাচ্ছে। 
+IPv4 এ্যাড্রেস স্পেসের এই অপ্রতুলতার কারণেই নতুন ধরণের একটি নেটওয়ার্ক 
+লেয়ার প্রটোকলের প্রয়োজনীয়তা দেখা দেয় যার ধারাবাহিকতায় IPv6 এর আবির্ভাব 
+ঘটে। IPv6 হলো একটি 128 বিটের এ্যাড্রেস যা প্রায় 340 Undecillion 
+এ্যাড্রেস প্রদান করে। (340 Undecillion এর অর্থ হলো 340 এর পরে 36 টি 0)।</p>
+					<p>ইতিমধ্যে বিভিন্ন প্রতিষ্ঠান IPv6 এর ব্যবহার শুরু করেছে। সমগ্র 
+ইন্টারনেটের সব নেটওয়ার্ক ডিভাইসের মধ্যে IPv6 এর প্রয়োগ শেষ করা যথেষ্ট 
+সময় সাপেক্ষ। এটি একটি চলমান প্রক্রিয়া যা কোন দিন-তারিখ নির্ধারণ করে শেষ 
+করা সম্ভব নয়। একটি পরিসংখ্যানের তথ্য মতে, ২০১৪ সালের জুন মাস পর্যন্ত 
+ইন্টারনেটে IPv6 এর ব্যবহার হলো মাত্র 4% । এ থেকে প্রতীয়মান হয় যে, 
+ইন্টারনেটে IPv4 এখনো বহাল তবিয়তেই আছে। IPv4 থেকে IPv6 এ রূপান্তরের এই 
+সময়টিতে ইন্টারনেটে উভয় প্রটোকলই ব্যবহার হচ্ছে। IPv4 থেকে IPv6 এ 
+রূপান্তরের প্রক্রিয়াটি সহজ করার জন্য IETF বিভিন্ন পদ্ধতি বের করেছে যা 
+নিম্নরূপঃ</p>
+					<p>১) <b>Dual Stack:</b> Dual Stack হলো এমন একটি পদ্ধতি যার মাধ্যমে
+ কোন একটি নেটওয়ার্কে একই সাথে IPv4 ও IPv6 প্রটোকল ব্যবহার করা যায়। Dual 
+Stack সাপোর্ট করে এমন ডিভাইসসমূহ একই সাথে IPv4 ও IPv6 রান করতে </p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-1.jpg" alt="">
+					<p>২) <b>Tunneling:</b> Tunneling হলো এমন একটি পদ্ধতি যার মাধ্যমে 
+একটি IPv4 নেটওয়ার্কের মধ্য দিয়ে IPv6 এর প্যাকেটসমূহ চলাচল করতে পারে। 
+এক্ষেত্রে IPv6 এর প্যাকেটসমূহ একটি IPv4 প্যাকেটের মধ্যে Encapsulated 
+অবস্থায় থাকে।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-2.jpg" alt="">
+					<p>৩) <b>Translation:</b> Translation পদ্ধতিতে একটি IPv4 ও IPv6 
+প্রটোকল যুক্ত ডিভাইসের মধ্যে যোগাযোগের জন্য NAT64 নামক একটি ট্রান্সলেশন 
+টেকনিক ব্যবহৃত হয়। NAT64 এর মাধ্যমে একটি IPv4 এ্যাড্রেস থেকে IPv6 
+এ্যাড্রেসে এবং একটি IPv6 এ্যাড্রেস থেকে IPv4 এ্যাড্রেসে প্যাকেটসমূহকে 
+ট্রান্সলেট করা হয়।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-3.jpg" alt="">
+					
+					<h2>IPv6 Addressing</h2>
+					<p>একটি IPv4 এ্যাড্রেস হলো 32 বিটের বাইনারী ভ্যালু। যেমনঃ</p>
+					<p>11000000101010000000101000000001</p><p>
+					</p><p>একজন মানুষের পক্ষে এই 32 বিটের স্ট্রিং মনে রাখা কঠিন, তাই এই
+ এ্যাড্রেসসমূহকে Dotted Decimal ফরম্যাটে রিপ্রেজেন্ট করা হয়। বাইনারী 
+প্যাটার্ণের প্রতিটি Byte (1 Byte = 8 bit) কে একটি ডট (.) দ্বারা আলাদা 
+করা হয়। এই আলাদা অংশগুলোর প্রতিটিকে এক একটি Octet বলে।</p>
+					<p>11000000.10101000.00001010.00000001</p>
+					<p>এখানে বাইনারী 32 বিটকে প্রতিটি আট বিটের চারটি Octet এ বিভক্ত করা
+ হয়েছে। অতঃপর প্রতিটি Octect এর বাইনারী আটটি বিটকে ডেসিমাল ভ্যালুতে 
+রূপান্তর করা হয়।যেমনঃ </p>
+					<p>11000000.10101000.00001010.00000001 কে নিম্নরূপে প্রকাশ করা হয়।</p>
+					<p>192.168.10.1</p>
+					<p>একে Dotted Decimal ফরম্যাট বলে। ডিভাইসসমূহ তাদের অপারেশনের সময় 
+Binary প্যাটার্ণ ব্যবহার করে। Dotted Decimal ফরম্যাট শুধুমাত্র মানুষের 
+বুঝার ও মনে রাখার সুবিধার্থে ব্যবহৃত হয়।</p>
+					<p>অপরদিকে IPv6 এর ক্ষেত্রে একটি IPv6 এ্যাড্রেসকে Hexadecimal 
+ভ্যালু দিয়ে প্রকাশ করা হয়। Hexadecimal হলো একটি 16 ভিত্তিক নাম্বারিং 
+সিস্টেম। এই 16 ভিত্তিক নাম্বারিং সিস্টেমে 0 থেকে 9 পর্যন্ত সংখ্যা এবং A 
+থেকে F পর্যন্ত বর্ণসমূহ ব্যবহৃত হয়। চিত্রে একই Decimal নম্বরের Binary ও 
+Hexadecimal রূপ কি রকম হয় তার কিছু উদাহরণ দেওয়া হলো।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-4.jpg" alt="">
+					<p>IPv6 এ্যাড্রেস হলো একটি 128 বিটের এ্যাড্রেস যা Hexadecimal 
+ভ্যালুর একটি স্ট্রিং আকারে লেখা হয়। IPv6 এ্যাড্রেস লেখার ফরম্যাটটি হলো 
+X:X:X:X:X:X:X:X যেখানে প্রতিটি X চারটি Hexadecimal ডিজিটকে রিপ্রেজেন্ট 
+করে। যেমনঃ 0000 বা FFFF । প্রতিটি Hexadecimal ডিজিটকে আবার চারটি বাইনারী
+ ডিজিট দ্বারা প্রকাশ করা হয়। যেমনঃ একটি F এর মান হলো 15, অর্থাৎ 
+বাইনারীতে 1111 । তাহলে প্রতিটি X হলো 16 টি বাইনারী ডিজিট বা 16 বিট।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-5.jpg" alt="">
+					<p>প্রতিটি X কে নিজেদের মধ্যে (:) দ্বারা পৃথক রাখা হয়। পৃথকীকৃত 
+প্রতিটি অংশকে এক একটি Hextet বলে। (IPv4 এর ক্ষেত্রে আমরা প্রতিটি ৮ বিটকে
+ একটি Octect বলি। কিন্তু এখানে Hextet শব্দটি কোন স্বীকৃত শব্দ নয়, আমরা 
+শুধুমাত্র বুঝার সুবিধার্থে ব্যবহার করছি)।</p>
+					<p>নিচে কিছু IPv6 এ্যাড্রেসের নমুনা দেওয়া হলোঃ</p>
+					<p>2001 : 0DB8 : 0000 : 1111 : 0000 : 0000 : 0000 : 0200</p>
+					<p>2001:0DBD:0000:00A3:ABCD:0000:0000:1234</p>
+					<p>FE80:0000:0000:0000:0123:4567:89AB:CDEF</p>
+
+					<p>তবে সব সময় উপরিউক্ত পদ্ধতিটি IPv6 এ্যাড্রেস লেখার জন্য আদর্শ 
+পদ্ধতি নয়। IPv6 এ্যাড্রেস লেখার সময় অপ্রয়োজনীয় ডিজিট সংখ্যা কমিয়ে IPv6 
+এ্যাড্রেসটিকে ছোট আকারে লেখার জন্য দুইটি নিয়ম নিম্নে দেওয়া হলোঃ</p>
+					<p><b>নিয়ম-১:</b> একটি IPv6 এ্যাড্রেসের আকার ছোট করার জন্য প্রতিটি 16 bit section বা Hextet এর অগ্রবর্তী 0 সমূহকে বাদ দেওয়া হয়। যেমনঃ</p>
+					<p>01AB এর পরিবর্তে লেখা হয় 1AB<br>
+					09F0 এর পরিবর্তে লেখা হয় 9F0<br>
+					0A00 এর পরিবর্তে লেখা হয় A00<br>
+					00AB এর পরিবর্তে লেখা হয় AB</p>
+					<p>এভাবে প্রতিটি Hextet এর শুধুমাত্র অগ্রবর্তী 0 গুলোকেই বাদ দেওয়া যাবে, পরেরগুলোকে নয়।</p>
+					<p>নিচের চিত্রে কিছু উদাহরণ দেওয়া হলোঃ</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-6.jpg" alt="">
+					<p><b>নিয়ম-২:</b> IPv6 এ্যাড্রেসের আকার ছোট করার জন্য পাশাপাশি 
+Hextet এর মধ্যকার ধারাবাহিক 0 সমূহের পরিবর্তে একটি ডাবল কোলন (::) 
+ব্যবহার করা হয়। যেমনঃ</p> 
+					<p>2001:0DBD:0000:1111:0000:0000:0000:0200 কে নিম্নরূপভাবে লেখা যায়ঃ</p>
+					<p>2001:DBD:0:1111::200</p>
+					<p>এক্ষেত্রে একটি IPv6 এ্যাড্রেসে শুধুমাত্র একটি ডাবল কোলন (::) ব্যবহার করা যাবে।</p>
+					<p>যেমনঃ</p>
+					<p>2001:0DBD:0000:0000:ABC1:0000:0000:0100<br>
+					2001:DBD::ABC1::100 (ভূল)<br>
+					2001:DBD::ABC1:0:0:100 (সঠিক)<br>
+					অথবা<br>
+					2001:DBD:0:0:ABC1::100 (সঠিক)</p>
+
+
+					<h2>IPv6 Prefix Length</h2>
+					<p>একটি IPv4 এ্যাড্রেসের ক্ষেত্রে আমরা নেটওয়ার্ক অংশ ও হোষ্ট অংশকে 
+আলাদাভাবে চিহ্নিত করার জন্য সাবনেট মাস্ক অথবা Prefix Length/CIDR 
+Notation ব্যবহার করি। কিন্তু IPv6 এর ক্ষেত্রে সাবনেট মাস্ক ব্যবহার করা 
+হয় না, এক্ষেত্রে শুধু Prefix Length ব্যবহৃত হয়।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-7.jpg" alt="">
+					<p>IPv6 এর ক্ষেত্রে Prefix Length 0 থেকে 128 পর্যন্ত হয়ে থাকে। একটি
+ ল্যান বা অন্যান্য নেটওয়ার্কের জন্য সাধারণত Prefix Length হয় /64 । এই 
+/64 দ্বারা বুঝায় IPv6 এ্যাড্রেসের প্রথম 64 বিট নেটওয়ার্ক অংশের (Prefix) 
+এবং অবশিষ্ট 64 বিট হোষ্ট অংশের (Interface ID)।</p>
+					
+					<h2>IPv6 Address Types</h2>
+					<p>IPv6 এ্যাড্রেসসমূহ তিন ধরণের। যেমনঃ</p>
+					<p>১. <b>Unicast:</b> কোন একটি IPv6 এনাবলড ডিভাইসকে আলাদাভাবে 
+চিহ্নিত করার জন্য এর ইন্টারফেসে যে IPv6 এ্যাড্রেস ব্যবহার করা হয় তাকে 
+IPv6 Unicast এ্যাড্রেস বলে। এক কথায় IPv6 Unicast এ্যাড্রেস হলো এমন একটি 
+এ্যাড্রেস যা একটি নেটওয়ার্ক হোষ্টের জন্য ব্যবহৃত Valid এ্যাড্রেস।</p>
+					<p>২. <b>Multicast:</b> কোন একটি IPv6 এনাবলড ডিভাইস থেকে একই সাথে 
+একাধিক ডিভাইসে প্যাকেট পাঠানোর জন্য যে এ্যাড্রেস ব্যবহৃত হয় তাকে IPv6 
+Multicast এ্যাড্রেস বলে।</p>
+					<p>৩. <b>Anycast:</b> একটি IPv6 Anycast এ্যাড্রেস হলো এমন একটি Unicast এ্যাড্রেস যা একই সাথে একাধিক ডিভাইসে ব্যবহার করা যায়।</p>
+					<p>IPv4 এ যেমন Broadcast এ্যাড্রেস রয়েছে তা IPv6 এ নাই, কিন্তু IPv6
+ এ একটি All-nodes multicast এ্যাড্রেস রয়েছে যা IPv4 এর Broadcast 
+এ্যাড্রেসের মতোই কাজ করে।</p>
+					
+					<h2>1. IPv6 Unicast Address</h2>
+					<p>একটি IPv6 Unicast এ্যাড্রেস দ্বারা একটি নেটওয়ার্ক ডিভাইসকে 
+স্বতন্ত্রভাবে চিহ্নিত করা হয়। IPv6 এর ক্ষেত্রে ছয় ধরণের Unicast 
+এ্যাড্রেস রয়েছে। যেমনঃ</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-8.jpg" alt="">
+					<h2>* Global Unicast Address</h2>
+					<p>IPv6 Global Unicast এ্যাড্রেস হলো এমন একটি এ্যাড্রেস যা 
+ইন্টারনেটে প্রতিটি নেটওয়ার্ক ডিভাইসকে একটি স্বতন্ত্র পরিচয় প্রদান করে। 
+একটি IPv6 Global Unicast এ্যাড্রেস IPv4 Public IP এর মতো কাজ করে। এই 
+এ্যাড্রেসসমূহ ইন্টারনেটে রাউটেবল। Internet Committee for Assigned Names 
+and Numbers (ICANN) ও Internet Assigned Numbers Authority (IANA) বিশ্বের
+ পাঁচটি Regional Internet Registries (RIRs) এর মাধ্যমে বিভিন্ন আই.এস.পি 
+সমূহকে এই Global Unicast এ্যাড্রেস প্রদান করে। IPv6 Global Unicast 
+এ্যাড্রেস চেনার উপায় হলো, এর মোট 128 টি বিটের মধ্যে প্রথন তিনটি বিট হলো 
+001 । অর্থাৎ প্রথম Hextet অনুযায়ী বিবেচনা করলে, 2000 থেকে শুরু করে 3FFF 
+পর্যন্ত যত এ্যাড্রেস আছে তার সবগুলোই হলো Global Unicast এ্যাড্রেস।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-9.jpg" alt="">					 
+					<p>একটি Global Unicast এ্যাড্রেসের তিনটি অংশ রয়েছে।</p>
+					<p>i) <b>Global Routing Prefix:</b> Global Routing Prefix হলো এমন 
+এক ধরণের Prefix বা এ্যাড্রেসের Network Portion যা আই.এস.পি গুলো তার 
+ক্লায়েন্টকে প্রদান করে থাকে। বর্তমানে RIRs সমূহ /48 এর Global Routing 
+Prefix প্রদান করছে। উদাহরণস্বরূপঃ একটি /48 যুক্ত এ্যাড্রেস 
+2001:0DB8:ACAD::/48 দ্বারা বুঝায় এর প্রথম তিনটি Hextet বা প্রথম 48 টি 
+বিট হলো এ্যাড্রেসটির নেটওয়ার্ক অংশ, আর :: দ্বারা বুঝায় অবশিষ্ট 80 (আশি) 
+টি বিটের সবগুলোই 0 অর্থাৎ হোষ্ট অংশ।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-10.jpg" alt="">
+					<p>ii) <b>Subnet ID:</b> IPv6 এ্যাড্রেসের 49 থেকে 64 এই বিটগুলোর 
+মাধ্যমে একটি প্রতিষ্ঠান বরাদ্দ পাওয়া আই.পি ব্লকের সাবনেট নির্ধারণ করে। 
+একে Subnet ID বলে।</p>
+					<p>iii) <b>Interface ID:</b> ইহা হলো একটি IPv6 এ্যাড্রেসের হোষ্ট অংশ। </p>
+					
+					
+					<p>একটি IPv6 এ্যাড্রেস পড়ার সহজ উপায় হলো প্রতমেই এ্যাড্রেসটির 
+Hextets সংখ্যা গননা করা। চিত্রে প্রদত্ত /64 Global Unicast এ্যাড্রেসের 
+প্রথম চারটি Hextet হলো Network Portion; এর মধ্যে চতুর্থ Hextet টি হলো 
+Interface ID ।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-11.jpg" alt="">
+
+					<p>IPv6 Global Unicast এ্যাড্রেসসমূহ স্ট্যাটিক বা ডায়নামিক উভয়ভাবেই কনফিগার করা যায়।</p>
+					
+					<p><b>Static Configuration (রাউটার)</b></p>
+					<div class="cmd-back1">
+					<pre>Router#conf t
+Router(config)# int fa0/0
+Router(config-if)#ipv6 address 2001:db8:acad:1::1/64 
+Router(config-if)#no shutdown</pre>
+					</div>
+					
+					<p><b>Static Configuration (কম্পিউটার)</b></p>
+					<p>কোন একটি উইন্ডোজ কম্পিউটারে IPv6 কনফিগারেশন প্রক্রিয়া IPv4 কনফিগার করার মতোই। ইহা নিচের চিত্রে দেওয়া হলো।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-12.jpg" alt="">
+					
+					<p><b>Dynamic Configuration</b></p>
+					<p>স্ট্যাটিক কনফিগারেশনের পাশাপাশি ডায়নামিকভাবেও IPv6 এ্যাড্রেস কনফিগার করা যায়। এজন্য দুইটি পদ্ধতি রয়েছে।</p>
+					<p>i. Stateless Address Auto Configuration (SLAAC)<br>
+					ii. DHCPv6</p>
+					<p><b>Using SLAAC</b></p>
+					<p>SLAAC হলো এমন একটি পদ্ধতি যার মাধ্যমে একটি কম্পিউটারে কোন DHCPv6
+ সার্ভার ছাড়াই একটি IPv6 রাউটারের কাছ থেকে Address, Prefix Length ও 
+Default Gateway এর তথ্য পেতে পারে। SLAAC এর ক্ষেত্রে ডিভাইসসমূহ 
+প্রয়োজনীয় তথ্যের জন্য লোকাল রাউটারের ICMPv6 Router Advertisement (RA) 
+ম্যাসেজ ব্যবহার করে। IPv6 রাউটারসমূহ ইহার লোকাল নেটওয়ার্কের ডিভাইসসমূহের
+ কাছে একটি নির্দিষ্ট সময় পর পর এই ICMPv6 Router Advertisement (RA) 
+ম্যাসেজ পাঠায়। Cisco রাউটারসমূহে এই সময় হলো 200 সেকেন্ড (বাই ডিফল্ট)। 
+নেটওয়ার্কে সদ্য সংযুক্ত কোন IPv6 ডিভাইসকে এই Periodic আপডেটের জন্য 
+অপেক্ষা করতে হয় না। এক্ষেত্রে ডিভাইসটি রাউটারের কাছে একটি Router 
+Solicitation (RS) ম্যাসেজ পাঠায়। এই RS ম্যাসেজ পাওয়ার সাথে সাথে রাউটার 
+উক্ত ডিভাইসের কাছে RA ম্যাসেজ পাঠায়।
+					কোন একটি রাউটারের মধ্যে IPv6 এ্যাড্রেম কনফিগার করলেই কিন্তু 
+রাউটারটি IPv6 রাউটার হিসেবে কাজ করে না। এজন্য রাউটারটির নিম্নলিখিত 
+বৈশিষ্ঠ্য থাকতে হয়।</p><p>
+					</p><p>i. রাউটারটি বিভিন্ন নেটওয়ার্ক সমূহের মধ্যে IPv6 প্যাকেট বিনিময় করতে পারে কি না।</p>
+					<p>ii. রাউটারটিকে স্ট্যাটিক বা ডাইনামিকভাবে IPv6 এ্যাড্রেস কনফিগার করা আছে কি না।</p>
+					<p>iii. রাউটারটি লোকাল নেটওয়ার্কের ডিভাইসসমূহের কাছে RA ম্যাসেজ পাঠায় কি না।</p>
+					<p>একটি Cisco রাউটারে বাই ডিফল্ট IPv6 রাউটিং এনাবল করা থাকে না। 
+রাউটারে IPv6 রাউটিং এনাবল করার জন্য Global Configuration মুডে নিচের 
+কমান্ড দিতে হয়।</p><p>
+					</p><div class="cmd-back1">
+					<pre>Router#conf t
+Router(config)#ipv6 unicast-routing</pre>
+					</div>
+
+					<p>একটি IPv6 RA ম্যাসেজের মধ্যে IPv6 এ্যাড্রেস, Prefix Length, 
+Default Gateway এর তথ্য থাকে। IPv6 RA ম্যাসেজের মধ্যে এটাও বলা থাকে কোন 
+ডিভাইস কিভাবে এই তথ্যসমূহ পাবে। একটি RA ম্যাসেজের ভিতর নিম্নোক্ত তিনটি 
+অপশনের মধ্যে যেকোন একটি অপশন বিদ্যমান থাকে।</p>
+					<p>i. <b>Option 1 – SLAAC Only:</b> এই অপশনে বলা থাকে যে, 
+ডিভাইসসমূহ শুধু RA ম্যাসেজের মধ্যকার Address, Prefix Length ও Default 
+Gateway এর তথ্য ব্যবহার করবে কিন্তু DHCPv6 সার্ভারের কোন তথ্য পাবে না।</p>
+					<p>ii. <b>Option 2 – SLAAC and DHCPv6:</b> এই অপশনে বলা থাকে যে, 
+ডিভাইসসমূহ শুধু RA ম্যাসেজের মধ্যকার Address, Prefix Length ও Default 
+Gateway এর তথ্যের পাশাপাশি একটি DHCPv6 সার্ভার হতে DNS সম্পর্কিত তথ্য 
+পাবে। এক্ষেত্রে DHCPv6 সার্ভারটি একটি Stateless DHCP সার্ভার হিসেবে কাজ 
+করবে। এসময় DHCPv6 সার্ভারটি IP Allocation সংক্রান্ত কোন তথ্য নিজের 
+রেকর্ডে রাখে না।</p>
+					<p>iii. <b>Option3 – DHCPv6 Only:</b> এই অপশনে বলা থাকে যে, 
+ডিভাইসসমূহ RA ম্যাসেজের তথ্য ব্যবহার না করে স্বাভাবিক DHCP ডিসকভারি ও 
+কুয়েরীর মাধ্যমে DHCPv6 সার্ভার হতে সকল তথ্যসমূহ পাবে। এক্ষেত্রে DHCPv6 
+সার্ভারটি IP Allocation এর সব তথ্য নিজের রেকর্ডে সংরক্ষণ করে অর্থাৎ ইহা 
+Stateful DHCPv6 সার্ভার হিসেবে কাজ করে।</p>
+					<p>রাউটার সোর্স আই.পি হিসেবে নিজের Link Local এ্যাড্রেস ব্যবহার করে
+ লোকাল ডিভাইসসমূহের কাছে ICMPv6 RA ম্যাসেজ পাঠায়। লোকাল ডিভাইসসমূহ 
+রাউটারের এই Link Local এ্যাড্রেসটিকে নিজেদের Default Gateway হিসেবে 
+ব্যবহার করে। </p>
+
+					<p><b>Using DHCPv6</b></p>
+					<p>IPv4 এর ক্ষেত্রে ডাইনামিকভাবে এ্যাড্রেস এ্যালোকেশনের জন্য DHCP 
+সার্ভার ব্যবহৃত হয়, আর IPv6 এর ক্ষেত্রে ব্যবহৃত হয় DHCPv6 সার্ভার। কাজের
+ দিক থেকে এই দুই ধরণের সার্ভার একই কাজ করে। কোন একটি ডিভাইস RA ম্যাসেজের
+ তথ্যের ভিত্তিতে DHCPv6 সার্ভারের কাছ থেকে Option 2 (SLACC and DHCPv6) ও
+ Option 3 (DHCPv6 Only) এর বিপরীতে যথাক্রমে আংশিক বা সম্পূর্ণ তথ্য পেতে 
+পারে। তবে ডিভাইসের OS নিজের প্রয়োজন অনুযায়ী RA ম্যাসেজকে Ignore করে কোন 
+একটি DHCPv6 সার্ভার হতে সকল তথ্য নিতে পারে।</p>
+					<p><b>Interface ID</b></p>
+					<p>যদি একটি ক্লায়েন্ট ডিভাইস রাউটারের RA ম্যাসেজের বদলে 
+সম্পূর্ণভাবে একটি DHCPv6 সার্ভারের উপর নির্ভর করে (Option 3) তাহলে উক্ত 
+ডিভাইস সার্ভারের নিকট থেকে Prefix ও Interface ID সহ একটি IPv6 Global 
+Unicast এ্যাড্রেস পায়। যদি Option 1 অথবা Option 2 ব্যবহৃত হয় তাহলে 
+ক্লায়েন্ট ডিভাইস এই পদ্ধতিতে Actual Interface ID পায় না। এক্ষেত্রে 
+ক্লায়েন্ট ডিভাইস নিজে নিজেই একটি 64 বিটের Ramdom Interface ID বেছে নেয়। 
+Random Interface ID নির্ধারণের ক্ষেত্রে ক্লায়েন্ট ডিভাইস একটি Random 64 
+bit নম্বর জেনারেট করে অথবা EUI-64 Process ব্যবহার করে।</p>
+					<p>Randomly Generated Interface ID</p>
+					<p>ক্লায়েন্ট ডিভাইসের OS ভার্সনের উপর ভিত্তি করে Random Interface 
+ID জেনারেট হয় অথবা EUI-64 Process এ Interface ID জেনারেট হয়। Windows XP ও
+ এর আগের ভার্সনগুলোতে EUI-64 Process ব্যবহৃত হতো, কিন্তু Windows Vista ও
+ এর পরবর্তী ভার্সনগুলোতে ক্লায়েন্ট ডিভাইস নিজে নিজেই Random Interface ID
+ জেনারেট করে।</p>
+					<p>EUI-64 Process</p>
+					<p>Extended Unique Identifier বা EUI-64 Process একটি Random 64 bit 
+Interface ID তৈরী করার জন্য ক্লায়েন্ট ডিভাইসের 48 বিট MAC এ্যাড্রেসের 
+মধ্যে আরো 16 টি বিট যোগ করে।</p>
+					<p>একটি MAC এ্যাড্রেসের সাধারণত দুইটি অংশ রয়েছে।</p>
+					<p>i. Organizationally Unique Identifier (OUI): OUI হলো IEEE কর্তৃক নির্ধারিত একটি 24 বিটের ভেন্ডর কোড।<br>
+					ii. Device Identifier: Device Identifier হলো নির্দিষ্ট OUI এর অধীনে একটি 24 বিটের স্বতন্ত্র ভ্যালু। </p>
+					<p>EUI-64 Process একটি Random 64 bit Interface ID যেভাবে তৈরী হয় তা নিম্নরূপঃ</p>
+					<p>i. প্রথমে ক্লায়েন্ট ডিভাইসের MAC এর 24 বিট OUI নেওয়া হয়। এই 24 
+বিট OUI এর সাত নম্বর বিটটিকে Alter করা হয় অর্থাৎ, 0 থাকলে হয় 1 এবং 1 
+থাকলে হয় 0 ।<br>
+					ii. 24 বিট OUI এর সাথে একটি 16 বিটের ভ্যালু FFFF যোগ করা হয়।<br>
+					ii. সবশেষে ক্লায়েন্ট ডিভাইসের MAC এর শেষ 24 বিট অর্থাৎ Device Identifier যোগ করা হয়।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-13.jpg" alt="">
+
+					<h2>* Link Local Unicast Address</h2>
+
+					<p>IPv6 এর ক্ষেত্রে Link Local শব্দটি দ্বারা একটি নির্দিষ্ট 
+সাবনেটকে বুঝায়। Link Local Unicast এ্যাড্রেসের মাধ্যমে একটি ডিভাইস একই 
+সাবনেটের অন্যান্য ডিভাইসসমূহের সাথে যোগাযোগ করে। এই Link Local 
+এ্যাড্রেসসমূহ ইন্টারনেটে রাউটেবল নয়, এমনকি নিজ সাবনেটের বাইরেও রাউটেবল 
+নয়। Link Local এ্যাড্রেসসমূহের একটি বড় তাৎপর্য হলো যে, প্রতিটি IPv6 
+এনাবলড ডিভাইসে এই এ্যাড্রেসসমূহ থাকতে হয়, যেখানে উক্ত ডিভাইসসমূহে Global
+ Unicast এ্যাড্রেস থাকাটা ততটা গুরুত্বপূর্ণ নয়। যদি কোন একটি ডিভাইসের 
+ইন্টারফেসে Link Local এ্যাড্রেস ম্যানুয়ালী কনফিগার করা না হয় তাহলে উক্ত 
+ডিভাইস কোন DHCPv6 সার্ভারের সাহায্য ছাড়াই নিজে নিজে একটি Link Local 
+এ্যাড্রেস স্বয়ংক্রিয়ভাবে তৈরী করে নেয়।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-14.jpg" alt="">
+					<p>IPv6 Link Local এ্যাড্রেসের রেঞ্জ হলো FE80::/10 । /10 দ্বারা 
+বুঝায়, প্রথম দশটি বিট হলো 1111 1110 10xx xxxx. অর্থাৎ প্রথম Hextet এর 
+রেঞ্জ হলো 1111 1110 1000 0000 (FE80) থেকে 1111 1110 1011 1111 (FEBF) 
+পর্যন্ত। </p>
+
+					<p>IPv6 Link Local এ্যাড্রেস ব্যবহারের কিছু উদ্দেশ্য হলোঃ</p>
+					<p>i. একই সাবনেটের ডিভাইসসমূহ তাদের Default Gateway হিসেবে রাউটারের
+ Global Unicast এ্যাড্রেসের বদলে Link Local এ্যাড্রেস ব্যবহার করে থাকে।<br>
+					ii. রাউটারসমূহ Link Local এ্যাড্রেস ব্যবহার করে নিজেদের মধ্যে ডাইনামিক রাউটিং প্রটোকল ম্যাসেজ বিনিময় করে।<br>
+					iii. রাউটারের রাউটিং টেবিল IPv6 প্যাকেট ফরোয়ার্ড করার সময় Next Hop 
+রাউটার আইডেন্টিফাই করতে Link Local এ্যাড্রেস ব্যবহার করে।</p>
+
+					<p>একটি Link Local এ্যাড্রেস স্ট্যাটিক ও ডাইনামিক উভয়ভাবেই কনফিগার করা যায়।</p>
+
+					<p>স্ট্যাটিক কনফিগারেশন<br>
+					--------------------------</p>
+					<div class="cmd-back1">
+					<pre>Router#conf t 
+Router(config)#int fa0/1
+Router(config-if)#ipv6 address FE80::1 link-local</pre>
+					</div>
+
+					<p>ডাইনামিক কনফিগারেশন<br>
+					-----------------------------</p>
+					<p>যখন কোন একটি ডিভাইসের ইন্টারফেসে একটি Global Unicast এ্যাড্রেস 
+এ্যাসাইন করা হয় তখন উক্ত ডিভাইস সংশ্লিষ্ট ইন্টারফেসের জন্য 
+স্বয়ংক্রিয়ভাবে একটি Link Local এ্যাড্রেস জেনারেট করে নেয়। FE80::/10 
+Prefix ও Interface ID ব্যবহার করে একটি Link Local এ্যাড্রেস ডাইনামিকভাবে
+ তৈরী হয়।
+					Cisco ডিভাইসসমূহ Link Local এ্যাড্রেসের Interface ID জেনারেট করার 
+জন্য EUI-64 মেকানিজম ব্যবহার করে। ডাইনামিকভাবে জেনারেট হওয়া Link Local 
+এ্যাড্রেসসমূহ মনে রাখা ও রেকর্ড রাখা বেশ কষ্টসাধ্য ব্যাপার।</p>
+
+					<h2>2. IPv6 Multicast Address</h2>
+					<p>IPv6 নেটওয়ার্কে একটি হোষ্ট থেকে কোন একটি প্যাকেট একই সাথে একাধিক
+ হোষ্ট এ পাঠানোর জন্য IPv6 Multicast এ্যাড্রেস ব্যবহৃত হয়। IPv6 
+Multicast এ্যাড্রেসের Prefix হলো FF00::/8 ।</p>
+					<p>দুই ধরণের IPv6 Multicast এ্যাড্রেস রয়েছে। যেমনঃ<br>
+					i. Assigned Multicast<br>
+					ii. Solicited Multicast</p>
+					<h2>* Assigned Multicast</h2>
+					<p>এই এ্যাড্রেসসমূহ একটি নির্দিষ্ট গ্রুপের জন্য ব্যবহৃত হয়। একটি 
+Assigned Multicast এ্যাড্রেস হলো এমন একটি এ্যাড্রেস যা কিছু নির্দিষ্ট 
+হোষ্টের নিকট Multicast প্যাকেট পাঠানোর জন্য ব্যবহৃত হয় যে হোষ্টসমূহের 
+মধ্যে একই ধরণের প্রটোকল বা সার্ভিস চলমান থাকে।</p>
+					<p>IPv6 Assigned Multicast গ্রুপসমূহ হলোঃ</p>
+					<p>a) FF02::1 বা All-nodes Multicast Group: এই গ্রুপে একটি সাবনেটের
+ মধ্যে বিদ্যমান সকল IPv6 এনাবলড ডিভাইসের ইন্টারফেসসমূহ অন্তর্ভূক্ত থাকে।
+ ইহা IPv4 Broadcast এ্যাড্রেসের ন্যায় কাজ করে। অর্থাৎ কোন একটি IPv6 
+এনাবলড ডিভাইসের ইন্টারফেস থেকে FF02::1 এই এ্যাড্রেসে কোন প্যাকেট পাঠানো 
+হলে তা ঐ সাবনেটের সকল IPv6 এনাবলড ডিভাইসসমূহের কাছে পৌছাবে।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-15.jpg" alt="">
+					<p>b) FF02::2 বা All-routers Multicast Groups: এই গ্রুপের মধ্যে 
+শুধুমাত্র কোন একটি সাবনেটের IPv6 এনাবলড রাউটারসমূহ অন্তর্ভূক্ত। অর্থাৎ 
+কোন একটি IPv6 এনাবলড ডিভাইসের ইন্টারফেস থেকে FF02::2 এই এ্যাড্রেসে কোন 
+প্যাকেট পাঠানো হলে তা শুধুমাত্র ঐ সাবনেটের সকল IPv6 এনাবলড রাউটারসমূহের 
+কাছে পৌছাবে।</p>
+					
+					<h2>* Solicited Node Multicast</h2>
+					<p>একটি Solicited Node Multicast এ্যাড্রেস একটি All-nodes Multicast
+ এ্যাড্রেসের মতোই কাজ করে। শুধুমাত্র পার্থক্য হলো যে, All-nodes 
+Multicast এ্যাড্রেসের ক্ষেত্রে বহুসংখ্যক ডিভাইসের কাছে Multicast 
+এ্যাড্রেস পাঠানো হয়। পক্ষান্তরে Solicited Node Multicast এ্যাড্রেস 
+ব্যবহার করে প্রাপক ডিভাইস সংখ্যা কমানো হয়।</p>
+					<p>একটি Solicited Node Multicast এ্যাড্রেস হলো এমন একটি এ্যাড্রেস 
+যার শুধুমাত্র শেষ 24 বিট Global Unicast Address এর সাথে মিল থাকে। 
+অর্থাৎ, একটি Solicaited Node Multicast এ্যাড্রেসের শেষ 24 টি বিটের সাথে 
+সংশ্লিষ্ট সাবনেটের যে ডিভাইসসমূহের Global Unicast এ্যাড্রেসের শেষ 24 বিট
+ মিলবে শুধুমাত্র ঐ ডিভাইসসমূহের কাছে উক্ত Multicast প্যাকেটি পৌছাবে।</p>
+					<p>একটি ডিভাইসের কোন ইন্টারফেসে যখন কোন Global Unicast এ্যাড্রেস 
+কনফিগার করা হয় তখন উক্ত ইন্টারফেসে স্বয়ংক্রিয়ভাবে একটি Solicited 
+Multicast এ্যাড্রেস তৈরী হয়। একটি বিশেষ FF02:0:0:0:0:FF00::/104 Prefix 
+এর সাথে Global Unicast এ্যাড্রেসের শেষ 24 টি বিট একত্রিত হয়ে একটি 
+Solicited Node Multicast এ্যাড্রেস তৈরী হয়।</p>
+					<p>একটি Solicited Node Multicast এ্যাড্রেসের দুইটি অংশ নিম্নরূপঃ<br>
+					i. FF02:0:0:0:0:FF00::/104 Multicast Prefix: ইহা হলো একটি Solicited Node Multicast এ্যাড্রেসের প্রথম 104 টি বিট।<br>
+					ii. Last Significant 24 Bit: ইহা হলো একটি Solicited Node Multicast 
+এ্যাড্রেসের শেষ 24 টি বিট। এই 24 টি বিটের সাথে সংশ্লিষ্ট ডিভাইসের Global
+ Unicast বা Link-local Unicast এ্যাড্রেসের শেষ 24 টি বিটের হুবহু মিল 
+থাকে।</p>
+					<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/ipv6-16.jpg" alt="">
+
+				</div>
+					
+					
+					<div class="main_sidebar fix"> 
+						
+						<div class="notice fix">
+						<a href="http://tutorial.mnaser.net/fontproblem.php" title=""><img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/fontproblem.png" alt=""></a><br><br><br>
+						<img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/notice.png" alt="">
+						</div>
+						<div class="notice-text fix">
+						
+						</div>
+						
+						<div class="image-link">
+						
+						<a href="http://www.cisco.com/" target="_blank"><img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/cisco-logo.jpg" alt=""></a><br>
+						<a href="http://www.redhat.com/" target="_blank"><img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/redhat-logo.jpg" alt=""></a><br>
+						<a href="http://www.mikrotik.com/" target="_blank"><img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/mikrotik-logo.jpg" alt=""></a>
+						</div>
+					</div>
+					
+			</div>	
+			<!---End of main_area--->
+			
+			<!---Start of bottom_area--->
+			<div class="fix bottom_area">
+				<div class="bottom_col1">
+				<p><a href="http://tutorial.mnaser.net/links.php">● Useful Links</a></p><br>
+				<p><a href="http://tutorial.mnaser.net/sitemap.php">● Site Map</a></p><br>
+				<p><a href="http://tutorial.mnaser.net/feedback.php">● Feedback</a></p><br>
+				</div>
+				
+				<div class="bottom_col1">
+				<p><a href="http://tutorial.mnaser.net/links.php">● Useful Links</a></p><br>
+				<p><a href="http://tutorial.mnaser.net/sitemap.php">● Site Map</a></p><br>
+				<p><a href="http://tutorial.mnaser.net/feedback.php">● Feedback</a></p><br>
+				</div>
+				
+				<div class="bottom_col1">
+				<p><a href="http://tutorial.mnaser.net/links.php">● Useful Links</a></p><br>
+				<p><a href="http://tutorial.mnaser.net/sitemap.php">● Site Map</a></p><br>
+				<p><a href="http://tutorial.mnaser.net/feedback.php">● Feedback</a></p><br>
+				</div>
+			</div>
+			<!---End of bottom_area--->
+			
+			<!---Start of footer_area--->
+			<div class="fix footer_area">
+				<div class="copyright">
+					<p>This site is developed and maintained by - M Abdullah Al Naser</p>
+				</div>
+				
+				<div class="social_profiles fix">
+					<a href="http://www.facebook.com/m.abdullah.al.naser" target="_blank"><img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/facebook.png" alt=""></a>
+					<a href="http://bd.linkedin.com/pub/m-abdullah-al-naser/39/133/878" target="_blank"><img src="M%20Naser%27s%20Tutorial%20_%20IPv6%20Tutorial%20in%20Bangla_files/linkedin.png" alt=""></a>
+				</div>
+			</div>
+			<!---End of footer_area--->
+			
+		</div>	
+		<!---End of stracture--->
+		
+	
+
+
+</body></html>

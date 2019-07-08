@@ -1,0 +1,48 @@
+Class No : 03
+=============
+Review:
+1. IP  = Internet Protocol 
+  Use of IP : to identify network device.
+2. Rules of IP 
+ * IP is 32 bit (total)
+ * IP is devided into 4 octet
+ * each octet contains 8 bits
+
+ * IP has two parts a) Network part
+		    b) Host part
+
+* IP is devided into 5 class
+ CLASS			NETWORK Part	PRIVATE IP
+class A 1-126  Network part 1st octet 10.0.0.0-10.255.255.255
+Class B 128-191 Network part 2nd octet 172.16.0.0-172.31.255.255
+Class C 192-223 Network part 3rd octet  192.168.0.0-192.168.255.255
+
+Class D 224-239	Multicast
+Class E 240-255 R&D
+
+* Private & Public IP
+Private IP is for personal use
+Public IP is paid
+=======================================================================
+	SUBNETTING
+*Subnetting: devide single network into multiple network
+
+*Number of subnet: 2^n	n= number of borrowed bit
+* Number of Host : 2^h-2	H= Number of off bit
+*Block size / Subnet size: 256-subnet mask.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
